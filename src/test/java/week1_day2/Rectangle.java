@@ -1,4 +1,4 @@
-package week1Day2;
+package week1_day2;
 
 class Rect {
 	double length;
