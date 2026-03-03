@@ -17,9 +17,9 @@ class EmployeeInfo {
 
 	void data(boolean showsalary) {
 		if (showsalary) {
-			System.out.println(name + " works in " + dept + " with salary of " + salary);
+			System.out.println("Salary is " + salary);
 		} else {
-			System.out.println(name + " works in " + dept);
+			System.out.println("Salary not Disclosed");
 		}
 	}
 
