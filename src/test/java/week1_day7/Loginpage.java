@@ -6,9 +6,9 @@ class LoginPage extends BasePage {
         super(browserName);
     }
 
-    // TC2 — Login with valid credentials
+    // TC1 — Login with valid credentials
     public void loginUser(User user) {
-        System.out.println("\n>> TC2: Login User with correct email and password");
+        System.out.println("\n>> TC1: Login User with correct email and password");
         navigateTo(BASE_URL + "/login");
         verifyPageLoaded();
         typeText("Email", user.getEmail());
@@ -17,12 +17,11 @@ class LoginPage extends BasePage {
         user.setLoggedIn(true);                          // User already validated — trust it
         verifyText("Logged in as " + user.getName());
         System.out.println("Result: PASS ✅");
-        return;
     }
 
-    // TC3 — Login with invalid credentials
+    // TC2 — Login with invalid credentials
     public void loginWithInvalidCredentials(String email, String password) {
-        System.out.println("\n>> TC3: Login with incorrect email and password");
+        System.out.println("\n>> TC2: Login with incorrect email and password");
         navigateTo(BASE_URL + "/login");
         verifyPageLoaded();
         typeText("Email", email);
@@ -32,9 +31,9 @@ class LoginPage extends BasePage {
         System.out.println("Result: PASS ✅");
     }
 
-    // TC4 — Logout
+    // TC3 — Logout
     public void logoutUser(User user) {
-        System.out.println("\n>> TC4: Logout User");
+        System.out.println("\n>> TC3: Logout User");
         clickElement("Logout Button");
         user.setLoggedIn(false);                        // update User state
         verifyText("Login to your account");
